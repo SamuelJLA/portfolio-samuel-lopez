@@ -5,7 +5,7 @@ import { Project, ExperienceItem } from '@/types';
 // ============================================================================
 export const DEMO_TRADING = {
   email: 'samuellopezalcala198@gmail.com',
-  passwordPlaceholder: 'Sampat3st3',
+  passwordPlaceholder: 'Afkm2026',
 };
 
 export const DEMO_SAMANDTECH = {

@@ -14,14 +14,15 @@ export default function OtherProjects() {
           </h2>
         </div>
 
-        <div className="columns-1 md:columns-2 gap-6 space-y-6">
+        {/* Grid tradicional con alineación vertical independiente arriba (items-start) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           {OTHER_PROJECTS.map((project) => (
             <div
               key={project.id}
-              className="break-inside-avoid bg-slate-900/60 border border-slate-800 rounded-lg p-6 hover:border-slate-700 transition-colors"
+              className="bg-slate-900/60 border border-slate-800 rounded-lg p-6 hover:border-slate-700 transition-colors"
             >
               <div>
-                {/* Renderizado de imágenes */}
+                {/* Renderizado especial de 2 imágenes para Finanzas */}
                 {project.id === 'personal-finance' ? (
                   <div className="aspect-video bg-slate-950 rounded border border-slate-800 mb-4 grid grid-cols-2 gap-0.5 overflow-hidden p-0.5">
                     <img
@@ -43,7 +44,7 @@ export default function OtherProjects() {
                       className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
                     />
                     
-                    {/* Badge/Texto pequeño para primeros proyectos */}
+                    {/* Badge para primeros proyectos */}
                     {(project.id === 'samandtech-website' || project.id === 'it-inventory') && (
                       <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-slate-950/80 border border-slate-800/80 text-[10px] font-mono text-slate-400">
                         Primeros proyectos / Prototipo
