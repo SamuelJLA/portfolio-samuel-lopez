@@ -16,12 +16,18 @@ export default function TradingIndicators() {
           {TRADING_INDICATORS.map((indicator) => (
             <div
               key={indicator.id}
-              className="bg-slate-900/90 border border-amber-500/20 rounded-lg p-6 hover:border-amber-500/40 transition-all flex flex-col justify-between shadow-sm"
+              className="bg-slate-900/90 border border-amber-500/20 rounded-lg p-6 hover:border-amber-500/40 transition-all flex flex-col justify-between shadow-sm overflow-hidden"
             >
               <div>
-                <div className="aspect-video bg-slate-950 rounded border border-slate-800 mb-4 flex items-center justify-center text-slate-600 text-xs font-mono">
-                  [ Screenshot / Demo: {indicator.title} ]
+                {/* Contenedor de la Imagen Real */}
+                <div className="aspect-video bg-slate-950 rounded border border-slate-800 mb-4 overflow-hidden relative">
+                  <img
+                    src={indicator.imageUrl}
+                    alt={indicator.title}
+                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
+
                 <h3 className="text-lg font-bold text-white mb-1">{indicator.title}</h3>
                 {indicator.subtitle && (
                   <p className="text-xs font-mono text-amber-400/90 mb-3">{indicator.subtitle}</p>
@@ -42,22 +48,26 @@ export default function TradingIndicators() {
                 </div>
 
                 <div className="flex gap-4 text-xs pt-3 border-t border-slate-800">
-                  <a
-                    href={indicator.tradingViewUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-amber-400 hover:text-amber-300 font-semibold transition-colors"
-                  >
-                    TradingView →
-                  </a>
-                  <a
-                    href={indicator.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-slate-200 transition-colors"
-                  >
-                    GitHub Code →
-                  </a>
+                  {indicator.tradingViewUrl && (
+                    <a
+                      href={indicator.tradingViewUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-amber-400 hover:text-amber-300 font-semibold transition-colors"
+                    >
+                      Ver en TradingView →
+                    </a>
+                  )}
+                  {indicator.githubUrl && indicator.githubUrl !== 'GITHUB_URL' && (
+                    <a
+                      href={indicator.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-400 hover:text-slate-200 transition-colors"
+                    >
+                      GitHub Code →
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

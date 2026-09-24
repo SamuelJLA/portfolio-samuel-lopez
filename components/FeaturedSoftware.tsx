@@ -48,20 +48,16 @@ export default function FeaturedSoftware() {
                 >
                   Live Demo
                 </a>
-                <a
-                  href={FEATURED_SOFTWARE.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded bg-slate-800 text-slate-200 border border-slate-700 text-xs font-medium hover:bg-slate-700 transition-colors"
-                >
-                  GitHub
-                </a>
               </div>
             </div>
 
             <div className="md:col-span-5">
-              <div className="aspect-video sm:aspect-square bg-slate-950 rounded-lg border border-slate-800 flex items-center justify-center text-slate-600 text-xs font-mono p-4 text-center">
-                [ Screenshot Grande: {FEATURED_SOFTWARE.title} ]
+              <div className="aspect-video sm:aspect-square bg-slate-950 rounded-lg border border-slate-800 overflow-hidden relative">
+                <img
+                  src={FEATURED_SOFTWARE.imageUrl}
+                  alt={FEATURED_SOFTWARE.title}
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>

@@ -10,7 +10,9 @@ interface DemoAccessProps {
 export default function DemoAccess({ email, passwordPlaceholder }: DemoAccessProps) {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
+  const handleCopy = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     const textToCopy = `Email: ${email}\nPassword: ${passwordPlaceholder}`;
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
@@ -18,26 +20,50 @@ export default function DemoAccess({ email, passwordPlaceholder }: DemoAccessPro
   };
 
   return (
-    <div className="mt-4 p-3 bg-slate-900/80 border border-slate-800 rounded-md text-xs font-mono">
-      <div className="flex items-center justify-between mb-2 pb-1 border-b border-slate-800">
-        <span className="text-amber-500 font-sans font-semibold uppercase tracking-wider text-[10px]">
-          Credenciales de Acceso Demo
+    <details className="group mt-3 border border-slate-800 bg-slate-900/80 rounded-md overflow-hidden text-xs font-mono">
+      <summary className="w-full flex items-center justify-between p-2.5 bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer list-none select-none">
+        <div className="flex items-center gap-1.5">
+          <span>🔐</span>
+          <span className="font-sans font-semibold text-amber-400 text-xs">
+            Acceso Demo
+          </span>
+        </div>
+        <span className="text-amber-500 font-bold text-[11px] group-open:hidden">
+          Mostrar credenciales ▼
         </span>
+        <span className="text-amber-500 font-bold text-[11px] hidden group-open:inline">
+          Ocultar ▲
+        </span>
+      </summary>
+
+      <div className="p-3 bg-slate-950/90 border-t border-slate-800 space-y-2">
+        <div className="space-y-1 text-slate-300 text-[11px] bg-slate-900/90 p-2 rounded border border-slate-800/80">
+          <div className="break-all">
+            <span className="text-slate-500 font-bold">Email:</span> {email}
+          </div>
+          <div>
+            <span className="text-slate-500 font-bold">Pass:</span> {passwordPlaceholder}
+          </div>
+        </div>
+
         <button
+          type="button"
           onClick={handleCopy}
-          className="text-slate-400 hover:text-white transition-colors bg-slate-800 hover:bg-slate-700 px-2 py-0.5 rounded text-[10px]"
+          className="w-full py-1.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 hover:bg-amber-500 hover:text-slate-950 font-sans font-semibold text-[11px] transition-all flex items-center justify-center gap-1.5 active:scale-95"
         >
-          {copied ? 'Copiado' : 'Copiar Credenciales'}
+          {copied ? (
+            <>
+              <span className="text-emerald-400">✓</span>
+              <span>Credenciales copiadas</span>
+            </>
+          ) : (
+            <>
+              <span>📋</span>
+              <span>Copiar credenciales</span>
+            </>
+          )}
         </button>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 text-slate-300">
-        <div>
-          <span className="text-slate-500">Correo:</span> {email}
-        </div>
-        <div>
-          <span className="text-slate-500">Contraseña:</span> {passwordPlaceholder}
-        </div>
-      </div>
-    </div>
+    </details>
   );
 }

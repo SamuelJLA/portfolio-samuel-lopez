@@ -1,5 +1,18 @@
 import { Project, ExperienceItem } from '@/types';
 
+// ============================================================================
+// CREDENCIALES DEMO CENTRALIZADAS
+// ============================================================================
+export const DEMO_TRADING = {
+  email: 'samuellopezalcala198@gmail.com',
+  passwordPlaceholder: 'Sampat3st3',
+};
+
+export const DEMO_SAMANDTECH = {
+  email: 'jesus.alcala@samandtech.com',
+  passwordPlaceholder: 'Sampat3st3',
+};
+
 export const TRADING_INDICATORS: Project[] = [
   {
     id: 'macd-custom',
@@ -9,8 +22,7 @@ export const TRADING_INDICATORS: Project[] = [
     technologies: ['Pine Script', 'TradingView'],
     type: 'trading',
     imageUrl: '/placeholders/macd-preview.png',
-    tradingViewUrl: 'MACD_TRADINGVIEW_URL',
-    githubUrl: 'GITHUB_URL',
+    tradingViewUrl: 'https://es.tradingview.com/script/pHlmcMxO/',
   },
   {
     id: 'stochastic-custom',
@@ -20,8 +32,7 @@ export const TRADING_INDICATORS: Project[] = [
     technologies: ['Pine Script', 'TradingView'],
     type: 'trading',
     imageUrl: '/placeholders/stochastic-preview.png',
-    tradingViewUrl: 'STOCHASTIC_TRADINGVIEW_URL',
-    githubUrl: 'GITHUB_URL',
+    tradingViewUrl: 'https://es.tradingview.com/script/rqorYZFO/',
   },
   {
     id: 'tsi-custom',
@@ -31,8 +42,7 @@ export const TRADING_INDICATORS: Project[] = [
     technologies: ['Pine Script', 'TradingView'],
     type: 'trading',
     imageUrl: '/placeholders/tsi-preview.png',
-    tradingViewUrl: 'TSI_TRADINGVIEW_URL',
-    githubUrl: 'GITHUB_URL',
+    tradingViewUrl: 'https://es.tradingview.com/script/wI94OKbv/',
   },
   {
     id: 'market-structure-ob',
@@ -42,8 +52,7 @@ export const TRADING_INDICATORS: Project[] = [
     technologies: ['Pine Script', 'TradingView'],
     type: 'trading',
     imageUrl: '/placeholders/market-structure-preview.png',
-    tradingViewUrl: 'MARKET_STRUCTURE_TRADINGVIEW_URL',
-    githubUrl: 'GITHUB_URL',
+    tradingViewUrl: 'https://es.tradingview.com/script/pPnnfnfg/',
   },
 ];
 
@@ -56,44 +65,40 @@ export const FEATURED_SOFTWARE: Project = {
   featured: true,
   type: 'software',
   imageUrl: '/placeholders/trademind-preview.png',
-  demoUrl: 'TRADEMIND_DEMO_URL',
-  githubUrl: 'TRADEMIND_GITHUB_URL',
-  demoCredentials: {
-    email: 'DEMO_EMAIL',
-    passwordPlaceholder: 'DEMO_PASSWORD',
-  },
+  demoUrl: 'https://trading-account-navy.vercel.app/',
+  demoCredentials: DEMO_TRADING,
 };
 
 export const OTHER_PROJECTS: Project[] = [
   {
     id: 'personal-finance',
-    title: 'Finanzas Personales / Hábitos / Metas',
+    title: 'Finanzas, Hábitos & Objetivos',
     description: 'Aplicación web para gestión de finanzas personales, seguimiento de hábitos y definición de objetivos a largo plazo.',
     technologies: ['React', 'Next.js', 'Tailwind CSS', 'Supabase'],
     type: 'software',
     imageUrl: '/placeholders/finance-preview.png',
-    demoUrl: 'FINANCE_DEMO_URL',
-    githubUrl: 'FINANCE_GITHUB_URL',
+    demoUrl: 'https://nexus-dashboard-khaki.vercel.app/',
+    demoCredentials: DEMO_TRADING,
   },
   {
-    id: 'it-helpdesk',
-    title: 'IT HelpDesk',
-    description: 'Sistema web de gestión de tickets y herramientas de administración IT.',
-    technologies: ['React', 'Node.js', 'Tailwind CSS', 'MySQL'],
+    id: 'samandtech-website',
+    title: 'SAMANDTECH — Portal Corporativo IT',
+    description: 'Sitio web corporativo y de presentación de servicios de outsourcing técnico e infraestructura IT.',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
     type: 'software',
-    imageUrl: '/placeholders/helpdesk-preview.png',
-    demoUrl: 'HELPDESK_DEMO_URL',
-    githubUrl: 'HELPDESK_GITHUB_URL',
+    imageUrl: '/placeholders/samandtech-preview.png', // <-- Ruta correcta
+    demoUrl: 'https://samueljla.github.io/samand-tech-v1/login.html',
+    demoCredentials: DEMO_SAMANDTECH,
   },
   {
-    id: 'inventory-management',
-    title: 'Inventory Management',
-    description: 'Sistema web de gestión e inventario visual de activos informáticos.',
+    id: 'it-inventory',
+    title: 'Gestión de Inventario y Activos ITAM',
+    description: 'Sistema web de inventario visual y trazabilidad de activos tecnológicos para empresas.',
     technologies: ['React', 'Tailwind CSS', 'REST APIs'],
     type: 'software',
-    imageUrl: '/placeholders/inventory-preview.png',
-    demoUrl: 'INVENTORY_DEMO_URL',
-    githubUrl: 'INVENTORY_GITHUB_URL',
+    imageUrl: '/placeholders/inventory-preview.png', // <-- Ruta correcta
+    demoUrl: 'https://samantech-itam.vercel.app/',
+    demoCredentials: DEMO_SAMANDTECH,
   },
 ];
 
@@ -144,8 +149,6 @@ export const TECH_CATEGORIES = [
 ];
 
 export const SOCIAL_LINKS = {
-  github: 'GITHUB_URL',
-  tradingview: 'TRADINGVIEW_URL',
-  email: 'EMAIL_ADDRESS',
-  linkedin: 'LINKEDIN_URL',
+  tradingview: 'https://es.tradingview.com/u/samueljla/',
+  email: 'samuellopezalcala198@gmail.com',
 };

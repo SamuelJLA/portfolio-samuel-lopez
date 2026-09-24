@@ -28,14 +28,6 @@ export default function Hero() {
           >
             Ver proyectos
           </a>
-          <a
-            href="GITHUB_URL"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-md bg-slate-900 text-slate-300 border border-slate-800 font-medium text-sm hover:text-white hover:border-slate-700 transition-colors"
-          >
-            GitHub
-          </a>
         </div>
       </div>
     </section>

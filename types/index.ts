@@ -4,9 +4,9 @@ export interface Project {
   subtitle?: string;
   description: string;
   technologies: string[];
-  featured?: boolean;
   type: 'trading' | 'software';
   imageUrl: string;
+  featured?: boolean;
   demoUrl?: string;
   githubUrl?: string;
   tradingViewUrl?: string;
